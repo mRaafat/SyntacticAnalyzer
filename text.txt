@@ -1,0 +1,154 @@
+int Z83t = -1677422488 ;
+int Pmwuk = Z83t ;
+int Fze1b7 = 154503709 ;
+int Y739p = -1247788339 ;
+String Np1mq8 = "P/H=1" ;
+double O3y7rgnd = 2.9322510189016335 ;
+double Mlrk = 1.0731014322758066 ;
+char Jo2e = 'Q' ;
+char Hx = 'B' ;
+short A9ei = 28184 ;
+short Uok85 = A9ei ;
+short F6b8839l = -17109 ;
+int [] Mgv4n73 = {Z83t, 1697110150, 1463865436, 1775855906, -1456901001, -651497824, -1716160505, -21883263, -836007988, -1905135984, -1005511105, -1851230973, 1258528614, -1768659332, Z83t, -1352336109, -1685232204, 1666692755, 549941820, Y739p, -1059035008, 1234413424, 1649023764, -49513440, -833509732, 106212650, -913416792, -1712415056, 1839324865} ;
+int [] Uj8330 = new int [15] ;
+for(int Uj8330Count = 0 ; Uj8330Count < Uj8330.length ; Uj8330Count++)
+{
+	Uj8330[Uj8330Count] = 51047941  - 974939913  / 1452812944 ;
+}
+
+int [] Ep8sk3 = {Z83t, Pmwuk, Pmwuk, 324308343, -1701413861, -1075453086, -1631747281, Fze1b7, Pmwuk, Y739p, -198496210, Z83t, 82360679, 1129501505, 2129221209, 543242169, 450610505, -2047096275, 465214027, 1160641778, 1089632386, -1697125494, 1704736386, Fze1b7, Pmwuk, -1181148397, -1672790559, -2102611340, 1491175886, 32455610, -706485219, -422826122, 145350083} ;
+String [] R572xulxd = new String [48] ;
+for(int R572xulxdCount = 0 ; R572xulxdCount < R572xulxd.length ; R572xulxdCount++)
+{
+	R572xulxd[R572xulxdCount] =  "P-iJ"  + '9' ;
+}
+
+String [] Skvr548dz7 = new String [29] ;
+for(int Skvr548dz7Count = 0 ; Skvr548dz7Count < Skvr548dz7.length ; Skvr548dz7Count++)
+{
+	Skvr548dz7[Skvr548dz7Count] = Skvr548dz7[Skvr548dz7Count] +  "*#Bz4fke"  ;
+}
+
+String [] Fls2 = {Np1mq8} ;
+double [] Pd7 = new double [43] ;
+for(int Pd7Count = 0 ; Pd7Count < Pd7.length ; Pd7Count++)
+{
+	Pd7[Pd7Count] = -1.3237566399656022  / 0.9547787038271803 ;
+}
+
+double [] Yx24 = new double [23] ;
+for(int Yx24Count = 0 ; Yx24Count < Yx24.length ; Yx24Count++)
+{
+	Yx24[Yx24Count] = -6.81714942252959  / -0.06548317711471208  - -12.789550051941548  * 1.8690242510200343 ;
+}
+
+double [] V9w193m1 = new double [49] ;
+for(int V9w193m1Count = 0 ; V9w193m1Count < V9w193m1.length ; V9w193m1Count++)
+{
+	V9w193m1[V9w193m1Count] = 0.05099888771531976  / Mlrk ;
+}
+
+boolean [] Z713lqh = {false, true, false, false, true, true, true, true, true, true, false, true, false, true, true, true, false, false, true, true, true, true, true, false, false, true, false, false, true, false, true, true, false, true, true} ;
+boolean [] Dn06v = {true, true, true, true, false} ;
+boolean [] E6f = {true, true, false, true, false, true, false, true, false, false, false, true, true} ;
+long [] Sz3e = {} ;
+long [] G8g7c7kj = {} ;
+char [] Tl358 = {'F', 's', '|', Jo2e, Hx, 'Y', 'U', 'X', 'v', ']', '.', 'V', Jo2e, '\\', 'U', '+', 'V', 'h', 't', 'o', '|', 'W', 'h', 'h', Jo2e, 'b', 'G', 'U', '1', 'x', Hx, 'z', 'o', 'O', 'F', '5', Hx, Jo2e, Hx} ;
+char [] Oe4bv = {'%', 'j', '=', Hx, 'k', Hx, Hx, 'm', 'G', '3', 'h', 'j', 'o', '6', '$', 'f'} ;
+char [] D746jbogb = {'C', Hx, Jo2e, 'e', '`', Hx, Hx, Hx, 'H', 'v', '5', 'C', 'S', 'f', '+', 'X', Hx, 'J'} ;
+char [] Wj472e7 = {Hx, '(', 'x', ',', '|', 't', Jo2e, Jo2e, 'g', Hx, 'O', Jo2e, 'D', 'm', '2', 'W', '6', 'n', '*', 'g', 'N', '9', Hx, 'b', '>', '9', Jo2e, Hx, 'z', Jo2e, 'k', Hx} ;
+byte [] Tg56 = new byte [17] ;
+for(int Tg56Count = 0 ; Tg56Count < Tg56.length ; Tg56Count++)
+{
+	Tg56[Tg56Count] = (byte) (-54  * 99  - -110  * -50) ;
+}
+
+short [] Zu9 = {15587, 18119, -12666, A9ei, 7618, Uok85, -10198, -4565, 22754, 7022, Uok85, 3031, Uok85, 32532, -7366, 14109, 10041} ;
+O3y7rgnd = 0.05247060238451368  * -0.9341276998399031  + O3y7rgnd  * -0.557929147136691 ;
+A9ei = (short) (F6b8839l  * -6234) ;
+for(int Ep8sk3Count = 0 ; Ep8sk3Count < Ep8sk3.length ; Ep8sk3Count++)
+{
+	Ep8sk3[Ep8sk3Count] = -701385354  / -408379989 ;
+}
+
+for(int Uj8330Count = 0 ; Uj8330Count < Uj8330.length ; Uj8330Count++)
+{
+	Uj8330[Uj8330Count] = -821018747  / 214386879  + 21102756  * -467106334 ;
+}
+
+for(int R572xulxdCount = 0 ; R572xulxdCount < R572xulxd.length ; R572xulxdCount++)
+{
+	R572xulxd[R572xulxdCount] = Np1mq8 + '#' ;
+}
+
+for(int Yx24Count = 0 ; Yx24Count < Yx24.length ; Yx24Count++)
+{
+	Yx24[Yx24Count] = -6.655579592833609  * -0.4628216866595208 ;
+}
+
+if( Y739p <= 562233444 )
+{
+	int Zz97duf = -1484923063 ;
+	Y739p = Z83t  / Pmwuk ;
+	Pmwuk = 1237536097  / Z83t  + -134928657  / 1674878447 ;
+	double I47my3h = O3y7rgnd ;
+	I47my3h = 0.00273870406864172  + 1.2131790358182695  * -0.8826965977625553 ;
+	Mlrk = 0.7274765847175636  * 0.6233332758138276  + -0.44100326862321076  * -4.348982686075332 ;
+	byte M6 = 121 ;
+	int [] C158a = new int [7] ;
+	for(int C158aCount = 0 ; C158aCount < C158a.length ; C158aCount++)
+	{
+		C158a[C158aCount] = -1914270325  * -57597790 ;
+	}
+
+	for(int C158aCount = 0 ; C158aCount < C158a.length ; C158aCount++)
+	{
+		C158a[C158aCount] = -469478724  / Fze1b7 ;
+	}
+
+	for(int Mgv4n73Count = 0 ; Mgv4n73Count < Mgv4n73.length ; Mgv4n73Count++)
+	{
+		Mgv4n73[Mgv4n73Count] = -1494573311  * -724504608  - 1371104171  * Fze1b7 ;
+	}
+
+	for(int Ep8sk3Count = 0 ; Ep8sk3Count < Ep8sk3.length ; Ep8sk3Count++)
+	{
+		Ep8sk3[Ep8sk3Count] = Pmwuk  / -1844951723 ;
+	}
+
+	for(int Fls2Count = 0 ; Fls2Count < Fls2.length ; Fls2Count++)
+	{
+		Fls2[Fls2Count] = Fls2[Fls2Count] + '>' ;
+	}
+
+	for(int Skvr548dz7Count = 0 ; Skvr548dz7Count < Skvr548dz7.length ; Skvr548dz7Count++)
+	{
+		Skvr548dz7[Skvr548dz7Count] = Skvr548dz7[Skvr548dz7Count] +  "J"  ;
+	}
+
+	double [] Q0hrs005t = {Mlrk, 1.8211988079092924, 1.0997433356868247, 0.32034059734352605, -1.1302506640597096, 0.21866882299051751, 4.178111811757308, I47my3h, -0.5402206537480383, -3.2788762378845284, Mlrk, -1.0539850264117314, -7.706467130427132, -1.8219490894985597, Mlrk, -1.4330468466590207, I47my3h, O3y7rgnd, 0.34723313075039614, 1.1725898804209318, 0.46977832042356527, -0.10499842112822758, I47my3h, -0.6420299879064129, -1.3358303143585677, -0.4206993077155415, 2.0700392234582217, O3y7rgnd, Mlrk, -0.04721902416612022, O3y7rgnd} ;
+	for(int Yx24Count = 0 ; Yx24Count < Yx24.length ; Yx24Count++)
+	{
+		Yx24[Yx24Count] = 1.5801732830421253  / 0.07693369882515946  + -0.854131198925615  / 0.1918463293938195 ;
+	}
+
+	for(int Q0hrs005tCount = 0 ; Q0hrs005tCount < Q0hrs005t.length ; Q0hrs005tCount++)
+	{
+		Q0hrs005t[Q0hrs005tCount] = Mlrk  / Mlrk ;
+	}
+
+	for(int Pd7Count = 0 ; Pd7Count < Pd7.length ; Pd7Count++)
+	{
+		Pd7[Pd7Count] = -0.4750580439092541  - 0.0539994059226705 ;
+	}
+
+	boolean [] Cc3p8l = {true, true, false, false, false, false, true, true, true, true, true, false, false, true} ;
+	long [] T0b1v73m64 = {} ;
+	byte [] Inu9m2107f = new byte [11] ;
+	for(int Inu9m2107fCount = 0 ; Inu9m2107fCount < Inu9m2107f.length ; Inu9m2107fCount++)
+	{
+		Inu9m2107f[Inu9m2107fCount] = (byte) (72  - 66) ;
+	}
+
+}

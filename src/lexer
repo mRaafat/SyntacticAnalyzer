@@ -1,0 +1,171 @@
+import java.util.*;
+import java.io.*;
+
+/* semantic value of token returned by scanner */
+
+public class lexer
+{
+	public static void main (String[] args) throws IOException
+	{
+		BufferedReader reader = new BufferedReader(new FileReader("MCode.java"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("1MCodeOut.txt"));
+		Yylex yy = new Yylex (reader);
+		while(true)
+		{
+			String x =yy.next_token();
+			if(x==null)
+				break;
+			writer.write(x);
+			writer.write('\n');
+		}
+		reader.close();
+		writer.close();
+	}
+}
+%%
+%function next_token
+%type String
+
+%eofval{
+  return null;
+%eofval}
+
+%{
+  public String sourceFilename;
+%}
+
+%line
+%char
+%state COMMENTS
+%state STS
+
+KEYWORD=int|class|public|private|void|protected|for|static|String|char|double|float|boolean|long|true|false|while|switch|case|return|if|break|new|short|byte|System|out|print|println|do
+PRNT = System.out.println
+ALPHA=[A-Za-z_]
+DIGIT=[0-9]
+ALPHA_NUMERIC={ALPHA}+({DIGIT}*)?
+ID=({ALPHA})*|({ALPHA_NUMERIC})*
+NUMBER={DIGIT}
+UNSIGNED_NUMBER= {DIGIT}+.{DIGIT}+|{DIGIT}+
+WHITE_SPACE=([\ \n\r\t\f\b])+
+COMMENT=//[^\n]* \n
+ANYTHING=(.*)|({WHITE_SPACE})*
+MLC=/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/
+ST = \"([^\"])*\"
+CH = '.'|'\\\\'|'\\\"'
+%%
+
+
+
+<YYINITIAL> "//" {
+  yybegin(COMMENTS);
+}
+<COMMENTS> [^\n] {
+}
+<COMMENTS> [\n] {
+  yybegin(YYINITIAL);
+}
+
+<YYINITIAL> {WHITE_SPACE} { }
+
+<YYINITIAL> {KEYWORD} {
+  return "KW\t"+yytext();
+}
+<YYINITIAL> {ID} {
+  return "ID\t"+yytext();
+}
+<YYINITIAL> {ST} {
+  return "ST\t"+yytext();
+}
+<YYINITIAL> {CH} {
+  return "CH\t"+yytext();
+}
+<YYINITIAL> {UNSIGNED_NUMBER} {
+  return "NM\t"+yytext();
+}
+<YYINITIAL> {COMMENT} {
+}
+<YYINITIAL> {MLC} {
+
+}
+
+
+<YYINITIAL> "." { 
+  return "DO\t."; 
+}
+<YYINITIAL> "," { 
+  return "FA\t,"; 
+}
+<YYINITIAL> "[]" { 
+  return "AA\t[]"; 
+}
+<YYINITIAL> "{" { 
+  return "LC\t{"; 
+}
+<YYINITIAL> "}" { 
+  return "RC\t}"; 
+}
+<YYINITIAL> "(" { 
+  return "LB\t("; 
+}
+<YYINITIAL> ")" { 
+  return "RB\t)"; 
+}
+<YYINITIAL> ";" { 
+  return "SM\t;"; 
+}
+<YYINITIAL> "=" { 
+  return "AO\t="; 
+}
+<YYINITIAL> "+" { 
+  return "PO\t+";
+}
+<YYINITIAL> "*" { 
+  return "MB\t*";
+}
+<YYINITIAL> "++" { 
+  return "PP\t++";
+}
+<YYINITIAL> "!=" { 
+  return "NE\t!=";
+}
+<YYINITIAL> "!" { 
+  return "LN\t!";
+}
+<YYINITIAL> "|" { 
+  return "LO\t|";
+}
+<YYINITIAL> "/" { 
+  return "DB\t/";
+}
+<YYINITIAL> "&" { 
+  return "LA\t&";
+}
+<YYINITIAL> "<=" { 
+  return "LE\t<=";
+}
+<YYINITIAL> ">=" { 
+  return "GE\t>=";
+}
+<YYINITIAL> "==" { 
+  return "EQ\t==";
+}
+<YYINITIAL> ">" { 
+  return "GT\t>";
+}
+<YYINITIAL> "<" { 
+  return "LT\t<";
+}
+<YYINITIAL> "[" { 
+  return "LS\t[";
+}
+<YYINITIAL> "]" { 
+  return "RS\t]";
+}
+<YYINITIAL> "-" { 
+  return "MO\t-";
+}
+
+<YYINITIAL> . { 
+  return "Undefined\t"+yytext(); 
+}
