@@ -39,8 +39,20 @@ public class lexer
 %state COMMENTS
 %state STS
 
-KEYWORD=int|class|public|private|void|protected|for|static|String|char|double|float|boolean|long|true|false|while|switch|case|return|if|break|new|short|byte|System|out|print|println|do
-PRNT = System.out.println
+DATATYPES=int|double|float|String|char|boolean|long|short|byte
+STATIC=static
+BOOLVAL = true | false
+RETURNTYPES = DATATYPES | void
+ACCESS=public|private|protected
+IF=if
+BRK=break
+FOR=for
+WHILE=while
+SWITCH=switch
+CLASS=class
+CASE=case
+NEW=new
+PRNT = System.out.println | System.out.print
 ALPHA=[A-Za-z_]
 DIGIT=[0-9]
 ALPHA_NUMERIC={ALPHA}+({DIGIT}*)?
@@ -56,7 +68,6 @@ CH = '.'|'\\\\'|'\\\"'
 %%
 
 
-
 <YYINITIAL> "//" {
   yybegin(COMMENTS);
 }
@@ -68,8 +79,50 @@ CH = '.'|'\\\\'|'\\\"'
 
 <YYINITIAL> {WHITE_SPACE} { }
 
-<YYINITIAL> {KEYWORD} {
-  return "KW\t"+yytext();
+<YYINITIAL> {NEW} {
+  return "NW\t"+yytext();
+}
+<YYINITIAL> {CASE} {
+  return "CS\t"+yytext();
+}
+<YYINITIAL> {CLASS} {
+  return "CL\t"+yytext();
+}
+<YYINITIAL> {SWITCH} {
+  return "SW\t"+yytext();
+}
+<YYINITIAL> {RETURN} {
+  return "RE\t"+yytext();
+}
+<YYINITIAL> {WHILE} {
+  return "WL\t"+yytext();
+}
+<YYINITIAL> {FOR} {
+  return "FR\t"+yytext();
+}
+<YYINITIAL> {BRK} {
+  return "BR\t"+yytext();
+}
+<YYINITIAL> {IF} {
+  return "IF\t"+yytext();
+}
+<YYINITIAL> {ACCESS} {
+  return "AC\t"+yytext();
+}
+<YYINITIAL> {RETURNTYPES} {
+  return "RT\t"+yytext();
+}
+<YYINITIAL> {BOOLVAL} {
+  return "BV\t"+yytext();
+}
+<YYINITIAL> {STATIC} {
+  return "ST\t"+yytext();
+}
+<YYINITIAL> {DATATYPES} {
+  return "DT\t"+yytext();
+}
+<YYINITIAL> {PRNT} {
+  return "PN\t"+yytext();
 }
 <YYINITIAL> {ID} {
   return "ID\t"+yytext();
