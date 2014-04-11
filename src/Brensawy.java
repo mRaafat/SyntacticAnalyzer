@@ -97,6 +97,7 @@ public class Brensawy {
 
 	/***
 	 * Check the correctness of the input arguments to a method
+	 * 
 	 * @return True if the input arguments match the java conventions
 	 */
 	public static boolean parseMethodInput() {
@@ -110,15 +111,20 @@ public class Brensawy {
 			token = getToken();
 			lastChLB = true;
 			while (true) {
+				// If the current token is RB and last token = comma, or Data
+				// type, return false.
 				if ((token.equals("RB") && lastChComma)
 						|| (token.equals("RB") && lastChDT)) {
 					result = false; // found Right paranthesis right after a
 									// comma
 					break;
 				} else {
+					// If the current token is RB and last token = ID, or left
+					// bracket, return true.
 					if (token.equals("RB") && lastChID || token.equals("RB")
 							&& lastChLB) {
 						result = true;
+						break;
 					} else {
 
 						if (token.equals("DT")) {
@@ -137,18 +143,22 @@ public class Brensawy {
 									lastChComma = true;
 									lastChDT = false;
 									lastChID = false;
-								} else
+								} // else
 									// The next token is not comma, however from
 									// the previous two condition, it is sure
 									// that,
 									//
-									result = true;
-							} else
+									// result = true;
+							} else {
 								// The last token was Datatype, but no ID found.
 								result = false;
-						} else
+								break;
+							}
+						} else {
 							// The token is not RB nor Datatype, so return false
 							result = false;
+							break;
+						}
 					}
 				}
 			}
