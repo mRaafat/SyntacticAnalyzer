@@ -95,34 +95,65 @@ public class Brensawy {
 
 	}
 
+	/***
+	 * Check the correctness of the input arguments to a method
+	 * @return True if the input arguments match the java conventions
+	 */
 	public static boolean parseMethodInput() {
 		String token = getToken();
-		boolean result;
-		boolean firstID = true;
+		boolean result = false;
 		boolean lastChComma = false;
+		boolean lastChID = false;
+		boolean lastChDT = false;
+		boolean lastChLB = false;
 		if (token.equals("LB")) {
 			token = getToken();
+			lastChLB = true;
 			while (true) {
-				if (token.equals("RB"))
+				if ((token.equals("RB") && lastChComma)
+						|| (token.equals("RB") && lastChDT)) {
+					result = false; // found Right paranthesis right after a
+									// comma
 					break;
-				else {
-					if (token.equals("DT")) {
-						token = getToken();
-						if (token.equals("ID")) {
-							token = getToken();
-							if (token.equals("FA")) {
-								token = getToken();
-								lastChComma = true;
-							}else //The next token is not comma, however the p
-								result = true;
-						}else
-							result = false;
-					}else
-						result = false;
+				} else {
+					if (token.equals("RB") && lastChID || token.equals("RB")
+							&& lastChLB) {
+						result = true;
+					} else {
 
+						if (token.equals("DT")) {
+							lastChLB = false;
+							token = getToken();
+							lastChDT = true;
+							lastChID = false;
+							lastChComma = false;
+							if (token.equals("ID")) {
+								token = getToken();
+								lastChDT = false;
+								lastChID = true;
+								lastChComma = false;
+								if (token.equals("FA")) {
+									token = getToken();
+									lastChComma = true;
+									lastChDT = false;
+									lastChID = false;
+								} else
+									// The next token is not comma, however from
+									// the previous two condition, it is sure
+									// that,
+									//
+									result = true;
+							} else
+								// The last token was Datatype, but no ID found.
+								result = false;
+						} else
+							// The token is not RB nor Datatype, so return false
+							result = false;
+					}
 				}
 			}
-		}
-
+		} else
+			result = false;
+		return result;
 	}
 }
