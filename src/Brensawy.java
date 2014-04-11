@@ -84,10 +84,15 @@ public class Brensawy {
 	}
 
 	public static boolean parseMethodHead() {
-		if (getToken().equals("AC")) {
-			if (getToken().equals("ST")) {
-				if (getToken().equals("RT")) {
-					return true;
+		String token = getToken();
+		if (token.equals("AC")) {
+			token = getToken();
+			if (token.equals("ST")) {
+				token = getToken();
+				if (token.equals("RT")) {
+					if (parseMethodHead()) {
+						return true;
+					}
 				}
 			}
 		}
