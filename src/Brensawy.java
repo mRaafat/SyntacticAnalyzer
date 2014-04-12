@@ -1,7 +1,9 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Stack;
@@ -10,17 +12,23 @@ public class Brensawy {
 	static BufferedReader bf = null;
 	static Stack<String> curleyStack = null;
 	static ArrayList<String> currentBlock = null;
+	static ArrayList<String> inputFile = null;// The array list that will hold
+												// all the input file tokens
 
 	public static void main(String[] death) throws IOException {
-		bf = new BufferedReader(new FileReader(new File("Code01out.java")));
+		inputFile = new ArrayList<String>();
 		curleyStack = new Stack<String>();
 		currentBlock = new ArrayList<String>();
-		parseClass();
-		// while(bf.ready()){
-		// String token = bf.readLine();
-		// String [] splitted = token.split("\t");
-		//
-		// }
+
+		bf = new BufferedReader(new FileReader(new File("11LCodeOut.txt")));
+		String token;
+		while ((token = bf.readLine()) != null) {
+
+			inputFile.add(token.split("\t")[0]);
+
+		}
+
+		// parseClass();
 	}
 
 	public static boolean parseClass() throws IOException {
@@ -50,8 +58,8 @@ public class Brensawy {
 				if (!getToken().equals("")) {
 					return false;
 				} else {
-					return handleClassBlock();
-					break;
+					return true;
+					// break;
 				}
 			currentBlock.add(token);
 		}
