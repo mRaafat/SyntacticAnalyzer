@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Brensawy {
+public class Assign2 {
 	static BufferedReader bf = null;
 	static Stack<String> curleyStack = null;
 	static int index = 0;
@@ -22,39 +22,37 @@ public class Brensawy {
 
 	public static void main(String[] death) throws IOException {
 		inputFileTokens = new ArrayList<String>();
+		inputFileTypes = new ArrayList<String>();
 		curleyStack = new Stack<String>();
 		currentBlock = new ArrayList<String>();
 
-		bf = new BufferedReader(new FileReader(new File("code.txt")));
+		bf = new BufferedReader(new FileReader(new File("test1.txt")));
 		String token;
-		while ((token = bf.readLine()) != null) {
-
+		while (bf.ready()) {
+			token = bf.readLine();
+			System.out.println(token);
 			inputFileTokens.add(token.split("\t")[0]);
 			inputFileTypes.add(token.split("\t")[1]);
 
 		}
 
-		System.out.print(parseWhileHead(inputFileTokens));
-		// parseClass();
+		//System.out.print(parseWhileHead(inputFileTokens));
+		 System.out.println(parseClass());
 	}
 
 	public static boolean parseClass() throws IOException {
-		String[] classDef = { "CS", "ID", "LC" };
+		String[] classDef = { "CL", "ID", "LC" };
 		for (int i = 0; i < classDef.length; i++) {
 			String token = getToken();
 			if (!token.equals(classDef[i]))
 				return false;
 		}
 		curleyHandle(1);
-		if (!parseClassBlock()) {
-			return false;
-		}
-		if (curleyStack.empty())
-			return true;
-		return false;
+		return parseClassBlock();
 	}
 
-	public static boolean parseWhileHead(ArrayList<String> token) {
+	public static boolean parseWhileHead() {
+		ArrayList<String> token = inputFileTokens;
 		boolean result = false;
 		int originalIndex = index;
 
@@ -111,21 +109,28 @@ public class Brensawy {
 		return result;
 
 	}
+	public static boolean checkEndClass(){
+		curleyHandle(2);
+		System.out.println(index);
+		if(index == inputFileTokens.size() && curleyStack.empty())
+			return true;
+		return false;
+	}
 
 	public static boolean parseClassBlock() {
+		boolean heads = false, blocks = false;
 		while (true) {
 			String token = getToken();
-			if (token.equals("LC"))
-				curleyHandle(1);
-			else if (token.equals("RC"))
-				curleyHandle(2);
-			if (curleyStack.empty())
-				if (!getToken().equals("")) {
-					return false;
-				} else {
+			System.out.println(token + "fff");
+			if(token.equals("RC"))
+				if(checkEndClass())
 					return true;
-					// break;
-				}
+				else
+					return false;
+			heads = parseMethodHead();
+			blocks = parseMethodBlock(curleyStack.size());
+			if(!heads || !blocks)
+				return false;
 			currentBlock.add(token);
 		}
 	}
@@ -148,8 +153,8 @@ public class Brensawy {
 
 	public static String getToken() {
 		try {
-			return bf.readLine().split("\t")[0];
-		} catch (IOException e) {
+			return inputFileTokens.get(index++);
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -157,21 +162,171 @@ public class Brensawy {
 	}
 
 	public static boolean parseMethodHead() {
+		int currentIndex = index;
 		String token = getToken();
 		if (token.equals("AC")) {
 			token = getToken();
 			if (token.equals("ST")) {
 				token = getToken();
 				if (token.equals("RT")) {
-					if (parseMethodHead()) {
+					token = getToken();
+					if(token.equals("ID"))
+						if (parseMethodInput()) {
+							return true;
+						}
+				}
+			}
+		}
+		index = currentIndex;
+		token = getToken();
+		if (token.equals("ST")) {
+			token = getToken();
+			if (token.equals("RT")) {
+				token = getToken();
+				if(token.equals("ID"))
+					if (parseMethodInput()) {
 						return true;
+					}
+				}
+			}
+		index = currentIndex;
+		token = getToken();
+		if (token.equals("ST")) {
+			token = getToken();
+			if (token.equals("RT")) {
+				token = getToken();
+				if(token.equals("ID"))
+					if (parseMethodInput()) {
+						return true;
+					}
+				}
+			}
+		return false;
+
+	}
+	public static boolean parseMethodBlock(int level){
+		String token = getToken();
+		boolean blockParsed = false;
+		if(!token.equals("LC"))
+			return false;
+		curleyHandle(1);
+		while(true){
+			token = getToken();
+			if(token.equals("RC")){
+				curleyHandle(2);
+				if(curleyStack.size() == level)
+					return true;
+			}
+			if(!parseBlock())
+				return false;
+		}		
+	}
+	
+	public static boolean parseBlock(){
+		int currentIndex = index;
+		boolean res = true;
+		if(parseIfHead())
+			res = parseBlock();
+		index = currentIndex;
+		if(parseWhileHead())
+			res = parseBlock();
+		index = currentIndex;
+		if(parseForHead())
+			res = parseBlock();
+		index = currentIndex;
+		if(parseStatment())
+			res = parseBlock();
+		
+		return res;
+	}
+	
+	public static boolean parseStatment(){
+		int currentIndex = index;
+		String token = getToken();
+		if(token.equals("AC")){
+			token = getToken();
+			if(token.equals("DT")){
+				token = getToken();
+				if(token.equals("ID")){
+					token = getToken();
+					if(token.equals("AO")){
+						token = getToken();
+						if(token.equals("ST") || token.equals("ID") || token.equals("NM")){
+							boolean lastOp = false;
+							while(true){
+								token = getToken();
+								if(token.equals("SM") && !lastOp)
+									return true;
+								if(token.equals("OPP"))
+									lastOp = true;
+								if(token.equals("ST") || token.equals("ID") || token.equals("NM"))
+									lastOp = false;
+							}
+						}
 					}
 				}
 			}
 		}
 		return false;
-
 	}
+	
+	public static boolean parseForHead(){
+		int currentIndex = index;
+		String token = getToken();
+		if(token.equals("FR")){
+			token = getToken();
+			if(token.equals("LB")){
+				token = getToken();
+				if(token.equals("ID")){
+					token = getToken();
+					if(token.equals("AO")){
+						token = getToken();
+						if(token.equals("NM")){
+							token = getToken();
+							if(token.equals("SM")){
+								token = getToken();
+								if(token.equals("CND")){
+									token = getToken();
+									if(token.equals("SM")){
+										token = getToken();
+										if(token.equals("ID")){
+											token = getToken();
+											if(token.equals("PP") || token.equals("MM")){
+												token = getToken();
+												if(token.equals("RB")){
+													return true;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}	
+				}
+			}
+		}
+		return false;
+	}
+	
+	public static boolean parseIfHead(){
+		int currentIndex = index;
+		String token = getToken();
+		if(token.equals("IF")){
+			token = getToken();
+			if(token.equals("LB")){
+				token = getToken();
+				if(token.equals("CND")){
+					token = getToken();
+					if(token.equals("RB")){
+						return true;
+					}	
+				}
+			}
+		}
+		return false;
+	}
+		
 
 	/***
 	 * Check the correctness of the input arguments to a method
@@ -179,7 +334,7 @@ public class Brensawy {
 	 * @return True if the input arguments match the java conventions
 	 */
 	public static boolean parseMethodInput() {
-		String token = getToken();
+		String token = inputFileTokens.get(index);
 		boolean result = false;
 		boolean lastChComma = false;
 		boolean lastChID = false;
@@ -239,6 +394,7 @@ public class Brensawy {
 						}
 					}
 				}
+			token = getToken();
 			}
 		} else
 			result = false;

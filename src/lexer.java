@@ -5,8 +5,8 @@ public class lexer
 {
 	public static void main (String[] args) throws IOException
 	{
-		BufferedReader reader = new BufferedReader(new FileReader("XLCode.java"));
-		BufferedWriter writer = new BufferedWriter(new FileWriter("1XLCodeOut.txt"));
+		BufferedReader reader = new BufferedReader(new FileReader("MCode.java"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("1MCodeOut.txt"));
 		Yylex yy = new Yylex (reader);
 		while(true)
 		{
@@ -79,8 +79,8 @@ class Yylex {
 	private final int COMMENTS = 1;
 	private final int yy_state_dtrans[] = {
 		0,
-		53,
-		55
+		84,
+		86
 	};
 	private void yybegin (int state) {
 		yy_lexical_state = state;
@@ -275,51 +275,51 @@ class Yylex {
 		/* 39 */ YY_NO_ANCHOR,
 		/* 40 */ YY_NO_ANCHOR,
 		/* 41 */ YY_NO_ANCHOR,
-		/* 42 */ YY_NOT_ACCEPT,
+		/* 42 */ YY_NO_ANCHOR,
 		/* 43 */ YY_NO_ANCHOR,
 		/* 44 */ YY_NO_ANCHOR,
-		/* 45 */ YY_NOT_ACCEPT,
+		/* 45 */ YY_NO_ANCHOR,
 		/* 46 */ YY_NO_ANCHOR,
-		/* 47 */ YY_NOT_ACCEPT,
+		/* 47 */ YY_NO_ANCHOR,
 		/* 48 */ YY_NO_ANCHOR,
-		/* 49 */ YY_NOT_ACCEPT,
+		/* 49 */ YY_NO_ANCHOR,
 		/* 50 */ YY_NO_ANCHOR,
 		/* 51 */ YY_NOT_ACCEPT,
 		/* 52 */ YY_NO_ANCHOR,
-		/* 53 */ YY_NOT_ACCEPT,
-		/* 54 */ YY_NO_ANCHOR,
-		/* 55 */ YY_NOT_ACCEPT,
-		/* 56 */ YY_NO_ANCHOR,
+		/* 53 */ YY_NO_ANCHOR,
+		/* 54 */ YY_NOT_ACCEPT,
+		/* 55 */ YY_NO_ANCHOR,
+		/* 56 */ YY_NOT_ACCEPT,
 		/* 57 */ YY_NO_ANCHOR,
-		/* 58 */ YY_NO_ANCHOR,
+		/* 58 */ YY_NOT_ACCEPT,
 		/* 59 */ YY_NO_ANCHOR,
-		/* 60 */ YY_NO_ANCHOR,
+		/* 60 */ YY_NOT_ACCEPT,
 		/* 61 */ YY_NO_ANCHOR,
-		/* 62 */ YY_NO_ANCHOR,
+		/* 62 */ YY_NOT_ACCEPT,
 		/* 63 */ YY_NO_ANCHOR,
-		/* 64 */ YY_NO_ANCHOR,
+		/* 64 */ YY_NOT_ACCEPT,
 		/* 65 */ YY_NO_ANCHOR,
-		/* 66 */ YY_NO_ANCHOR,
+		/* 66 */ YY_NOT_ACCEPT,
 		/* 67 */ YY_NO_ANCHOR,
-		/* 68 */ YY_NO_ANCHOR,
+		/* 68 */ YY_NOT_ACCEPT,
 		/* 69 */ YY_NO_ANCHOR,
-		/* 70 */ YY_NO_ANCHOR,
+		/* 70 */ YY_NOT_ACCEPT,
 		/* 71 */ YY_NO_ANCHOR,
-		/* 72 */ YY_NO_ANCHOR,
+		/* 72 */ YY_NOT_ACCEPT,
 		/* 73 */ YY_NO_ANCHOR,
-		/* 74 */ YY_NO_ANCHOR,
+		/* 74 */ YY_NOT_ACCEPT,
 		/* 75 */ YY_NO_ANCHOR,
-		/* 76 */ YY_NO_ANCHOR,
+		/* 76 */ YY_NOT_ACCEPT,
 		/* 77 */ YY_NO_ANCHOR,
-		/* 78 */ YY_NO_ANCHOR,
+		/* 78 */ YY_NOT_ACCEPT,
 		/* 79 */ YY_NO_ANCHOR,
-		/* 80 */ YY_NO_ANCHOR,
+		/* 80 */ YY_NOT_ACCEPT,
 		/* 81 */ YY_NO_ANCHOR,
-		/* 82 */ YY_NO_ANCHOR,
+		/* 82 */ YY_NOT_ACCEPT,
 		/* 83 */ YY_NO_ANCHOR,
-		/* 84 */ YY_NO_ANCHOR,
+		/* 84 */ YY_NOT_ACCEPT,
 		/* 85 */ YY_NO_ANCHOR,
-		/* 86 */ YY_NO_ANCHOR,
+		/* 86 */ YY_NOT_ACCEPT,
 		/* 87 */ YY_NO_ANCHOR,
 		/* 88 */ YY_NO_ANCHOR,
 		/* 89 */ YY_NO_ANCHOR,
@@ -363,56 +363,129 @@ class Yylex {
 		/* 127 */ YY_NO_ANCHOR,
 		/* 128 */ YY_NO_ANCHOR,
 		/* 129 */ YY_NO_ANCHOR,
-		/* 130 */ YY_NO_ANCHOR
+		/* 130 */ YY_NO_ANCHOR,
+		/* 131 */ YY_NO_ANCHOR,
+		/* 132 */ YY_NO_ANCHOR,
+		/* 133 */ YY_NO_ANCHOR,
+		/* 134 */ YY_NO_ANCHOR,
+		/* 135 */ YY_NO_ANCHOR,
+		/* 136 */ YY_NO_ANCHOR,
+		/* 137 */ YY_NO_ANCHOR,
+		/* 138 */ YY_NO_ANCHOR,
+		/* 139 */ YY_NO_ANCHOR,
+		/* 140 */ YY_NO_ANCHOR,
+		/* 141 */ YY_NO_ANCHOR,
+		/* 142 */ YY_NO_ANCHOR,
+		/* 143 */ YY_NO_ANCHOR,
+		/* 144 */ YY_NO_ANCHOR,
+		/* 145 */ YY_NO_ANCHOR,
+		/* 146 */ YY_NO_ANCHOR,
+		/* 147 */ YY_NO_ANCHOR,
+		/* 148 */ YY_NO_ANCHOR,
+		/* 149 */ YY_NO_ANCHOR,
+		/* 150 */ YY_NO_ANCHOR,
+		/* 151 */ YY_NO_ANCHOR,
+		/* 152 */ YY_NO_ANCHOR,
+		/* 153 */ YY_NO_ANCHOR,
+		/* 154 */ YY_NO_ANCHOR,
+		/* 155 */ YY_NO_ANCHOR,
+		/* 156 */ YY_NO_ANCHOR,
+		/* 157 */ YY_NO_ANCHOR,
+		/* 158 */ YY_NO_ANCHOR,
+		/* 159 */ YY_NO_ANCHOR,
+		/* 160 */ YY_NO_ANCHOR,
+		/* 161 */ YY_NO_ANCHOR,
+		/* 162 */ YY_NO_ANCHOR,
+		/* 163 */ YY_NO_ANCHOR,
+		/* 164 */ YY_NO_ANCHOR,
+		/* 165 */ YY_NO_ANCHOR,
+		/* 166 */ YY_NO_ANCHOR,
+		/* 167 */ YY_NO_ANCHOR,
+		/* 168 */ YY_NO_ANCHOR,
+		/* 169 */ YY_NO_ANCHOR,
+		/* 170 */ YY_NO_ANCHOR,
+		/* 171 */ YY_NO_ANCHOR,
+		/* 172 */ YY_NO_ANCHOR
 	};
 	private int yy_cmap[] = unpackFromString(1,130,
-"2:8,32:2,3,2,32,4,2:18,32,46,30,2:3,48,31,41,42,34,45,36,51,35,1,29:10,2,43" +
-",49,44,50,2:2,28:18,21,28:7,37,33,38,2,28,2,10,14,8,19,17,20,22,23,5,28,25," +
-"9,27,6,18,12,28,15,11,7,13,16,24,28,26,28,39,47,40,2:2,0:2")[0];
+"2:8,37:2,3,2,37,4,2:18,37,53,38,2:3,55,39,48,49,41,52,43,26,42,1,22:10,2,50" +
+",56,51,57,2:2,28,21:2,27,32,21:10,31,21:2,33,29,21:4,30,21,44,40,45,2,21,2," +
+"9,19,8,25,6,17,34,14,12,21,20,11,36,5,18,23,21,15,10,13,16,24,7,21,35,21,46" +
+",54,47,2:2,0:2")[0];
 
-	private int yy_rmap[] = unpackFromString(1,131,
-"0,1,2,1,3,4,1:3,5,1:6,6,7,8,1:2,9,10,1,11,12,13,1:7,11,1:4,14,15,16:2,17,18" +
-",15,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42" +
-",43,44,45,46,47,48,49,29,50,51,52,53,54,55,56,57,30,58,59,36,60,61,62,63,64" +
-",65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,13" +
-",89,90,91,92,93,94,95,96,97,98,40")[0];
+	private int yy_rmap[] = unpackFromString(1,173,
+"0,1,2,1,3,4,5,1:3,6,1:6,7,8,9,1:2,10,11,12,13,1:8,12,14:2,1:2,14:6,1:3,15,1" +
+"6,17:2,18,19,16,20,21,22,23,24,25,26,27,28,29,30,31,32,33,14,34,35,36,37,38" +
+",39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63" +
+",64,65,32,66,67,68,69,70,71,30,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86" +
+",87,88,89,90,91,92,93,94,95,96,97,14,98,99,100,101,102,103,104,105,106,107," +
+"108,109,110,111,112,113,75,114,115,116,117,118,119,120,121,122,123,124,125," +
+"126,127,128,129,130,131,132")[0];
 
-	private int yy_nxt[][] = unpackFromString(99,52,
-"1,2,3,4:2,39,43,97,109,117,119,121,122,119,123,124,125,119,126,46,127,128,1" +
-"19:2,129,119:4,5,40,44,4,3,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,2" +
-"3,-1:53,24,-1:32,25,-1:20,4:2,-1:27,4,-1:20,42:2,-1:2,42:24,5,42:22,-1:38,2" +
-"8,-1:57,29,-1:52,30,-1:50,31,-1:51,32,-1:51,33,-1:8,34:2,-1,34:48,-1,25:33," +
-"51,25:17,-1:5,119:24,130,-1:27,119,48,119:13,26,119:8,130,-1:23,45:29,27,45" +
-":21,-1:29,41,-1:27,119:12,50,119:11,130,-1:23,47:2,-1:2,47:28,49,47:18,-1:5" +
-",119:13,96,119:10,130,-1:53,35,-1:25,119:2,26,119:21,130,-1:52,47,35,-1,47," +
-"-1:23,119:19,26,119:4,130,-1:23,36,25:32,51,25:17,-1:5,119:8,68,119:15,130," +
-"-1:22,1,37:2,38,37:48,-1:5,119:5,111,119:18,130,-1:22,1,-1:56,119:6,68,119:" +
-"17,130,-1:27,119,69,119:22,130,-1:27,119:13,70,119:10,130,-1:27,118,119:23," +
-"130,-1:27,119:9,104,119:14,130,-1:27,71,119:12,120,119:10,130,-1:27,119:12," +
-"72,119:11,130,-1:27,119:2,68,119:21,130,-1:27,119:4,77,119:19,130,-1:27,119" +
-":10,26,119:13,130,-1:27,119:10,78,119:13,130,-1:27,67:24,130,-1:27,119:12,2" +
-"6,119:11,130,-1:27,119:17,26,119:6,130,-1:27,119:10,48,119:13,130,-1:27,119" +
-",98,119:9,105,119:12,130,-1:27,119:5,84,119:18,130,-1:27,119:8,85,119:15,13" +
-"0,-1:27,119:14,26,119:9,130,-1:27,119:9,80,119:14,130,-1:27,119:5,48,119:18" +
-",130,-1:27,86,119:23,130,-1:27,119:2,116,119:21,130,-1:27,119:4,68,119:19,1" +
-"30,-1:27,119:6,26,119:17,130,-1:27,119:3,88,119:20,130,-1:27,119:12,90,119:" +
-"11,130,-1:27,119:20,26,119:3,130,-1:27,119:10,92,119:13,130,-1:27,119:3,26," +
-"119:20,130,-1:27,119:18,26,119:5,130,-1:27,119:3,94,119:20,130,-1:27,119:5," +
-"92,119:18,130,-1:27,119,26,119:22,130,-1:27,119:22,26,119,130,-1:27,119:2,9" +
-"5,119:21,130,-1:27,119:12,74,119:11,130,-1:27,119:8,75,119:15,130,-1:27,119" +
-":10,52,119:13,130,-1:27,119:2,108,119:21,130,-1:27,119:5,65,119:18,130,-1:2" +
-"7,119:6,79,119:17,130,-1:27,119:13,115,119:10,130,-1:27,74,119:23,130,-1:27" +
-",119:2,73,119:21,130,-1:27,119:4,106,119:19,130,-1:27,119:5,89,119:18,130,-" +
-"1:27,87,119:23,130,-1:27,119:12,91,119:11,130,-1:27,119:4,92,119:19,130,-1:" +
-"27,119:4,54,56,119:12,99,119:5,130,-1:27,119:5,114,119:18,130,-1:27,119:6,8" +
-"1,119:17,130,-1:27,119:13,76,119:10,130,-1:27,80,119:23,130,-1:27,119:2,106" +
-",119:21,130,-1:27,119:4,107,119:19,130,-1:27,119:12,93,119:11,130,-1:27,119" +
-":13,57,119:10,130,-1:27,119:2,82,119:21,130,-1:27,119:2,83,119:21,130,-1:27" +
-",119:2,110,119:15,58,59,119:4,130,-1:27,119:8,60,119,61,119:13,130,-1:27,11" +
-"9:10,62,119:2,101,119:7,63,119:2,130,-1:27,119:12,103,119:11,130,-1:27,119:" +
-"13,102,119:10,130,-1:27,119:8,48,119:15,130,-1:27,119:4,112,64,119:7,65,119" +
-":10,130,-1:27,119:2,66,119:18,100,119:2,130,-1:27,119:18,113,119:5,130,-1:2" +
-"2");
+	private int yy_nxt[][] = unpackFromString(133,58,
+"1,2,3,4:2,48,136,150,156,136,158,160,161,162,136,163,136,164,136,165,136:2," +
+"5,166,136,167,6,168,136:5,169,136:3,4,49,53,3,7,8,9,10,11,12,13,14,15,16,17" +
+",18,19,20,21,22,23,-1:59,24,-1:39,25,-1:19,4:2,-1:32,4,-1:21,51:2,-1:2,51:1" +
+"7,5,51:35,-1:26,26,-1:76,28,-1:63,29,-1:58,30,-1:56,31,-1:57,32,-1:57,33,-1" +
+":7,34:2,-1,34:54,-1,25:40,60,25:16,-1:5,136:17,55,136:3,-1,136:10,-1:26,136" +
+",52,136:15,55,136:3,-1,136:10,-1:22,54:37,27,54:19,-1:22,50,-1:40,136:2,35," +
+"136:14,55,136:3,-1,136:10,-1:22,56:2,-1:2,56:35,58,56:17,-1:5,55:21,-1,55:1" +
+"0,-1:60,37,-1:23,136:7,85,136:9,55,136:3,-1,136:10,-1:59,56,37,56,-1:22,136" +
+":5,87,136:11,55,136:3,-1,136:10,-1:22,38,25:39,60,25:16,-1:5,136:4,88,136:1" +
+"2,55,136:3,-1,136:10,-1:39,64,-1:44,136:13,144,136:3,55,136:3,-1,136:10,-1:" +
+"37,66,-1:46,90,136:16,55,136:3,-1,136:10,-1:34,68,-1:49,136:8,69,136:8,55,1" +
+"36:3,-1,136:10,-1:22,70:2,-1:2,70:53,-1:23,72,-1:39,136:11,91,136:5,55,136:" +
+"3,-1,136:10,-1:36,74,-1:47,136:10,36,136:6,55,136:3,-1,136:10,-1:33,76,-1:5" +
+"0,136,146,136:15,55,136:3,-1,136:10,-1:26,78,-1:57,136:7,94,136:5,95,136:3," +
+"55,136:3,-1,136:10,-1:34,80,-1:49,136:14,154,136:2,55,136:3,-1,136:10,-1:32" +
+",82,-1:51,136:17,55,136:3,-1,136:2,97,136:7,-1:26,45,-1:57,136:10,98,136:6," +
+"55,136:3,-1,136:10,-1:21,1,46:2,47,46:54,-1:5,136:6,99,136:10,55,136:3,-1,1" +
+"36:10,-1:21,1,-1:62,136,39,136:15,55,136:3,-1,136:10,-1:26,136:5,100,136:11" +
+",55,136:3,-1,136:10,-1:26,136:10,69,136:6,55,136:3,-1,136:10,-1:26,136:17,5" +
+"5,136:3,-1,136:7,69,136:2,-1:26,136,69,136:15,55,136:3,-1,136:10,-1:26,136:" +
+"11,103,136:5,55,136:3,-1,136:10,-1:26,136:4,102,136:12,55,136:3,-1,136:10,-" +
+"1:26,136:17,55,136,106,136,-1,136:10,-1:26,136:8,148,136:8,55,136:3,-1,136:" +
+"10,-1:26,136:14,107,136:2,55,136:3,-1,136:10,-1:26,136:17,55,136:3,-1,136,1" +
+"08,136:8,-1:26,136:7,109,136:9,55,136:3,-1,136:10,-1:26,136,40,136:15,55,13" +
+"6:3,-1,136:10,-1:26,136:5,41,136:11,55,136:3,-1,136:10,-1:26,136:3,110,136:" +
+"13,55,136:3,-1,136:10,-1:26,136:10,112,136:6,55,136:3,-1,136:10,-1:26,136:1" +
+"5,42,136,55,136:3,-1,136:10,-1:26,136,149,136:15,55,136:3,-1,136:10,-1:26,1" +
+"36:4,113,136:12,55,136:3,-1,136:10,-1:26,136:6,91,136:10,55,136:3,-1,136:10" +
+",-1:26,136:17,55,136:3,-1,136:2,115,136:7,-1:26,136:9,43,136:7,55,136:3,-1," +
+"136:10,-1:26,136:3,69,136:13,55,136:3,-1,136:10,-1:26,44,136:16,55,136:3,-1" +
+",136:10,-1:26,136:8,91,136:8,55,136:3,-1,136:10,-1:26,136:3,118,136:13,55,1" +
+"36:3,-1,136:10,-1:26,136:17,55,136:3,-1,136:3,119,136:6,-1:26,136:17,55,136" +
+":3,-1,136:9,120,-1:26,69,136:16,55,136:3,-1,136:10,-1:26,136:8,121,136:8,55" +
+",136:3,-1,136:10,-1:26,136:17,55,136:3,-1,136:4,122,136:5,-1:22,62:2,-1:2,1" +
+"23:17,172,123:3,62,123:10,62:21,-1:5,136,124,136:15,55,136:3,-1,136:10,-1:2" +
+"6,136:17,55,136:3,-1,136:5,125,136:4,-1:26,136:13,126,136:3,55,136:3,-1,136" +
+":10,-1:26,136:17,55,136:2,69,-1,136:10,-1:26,136:17,55,136:3,-1,136:6,69,13" +
+"6:3,-1:26,136:11,127,136:5,55,136:3,-1,136:10,-1:26,136:8,128,136:8,55,136:" +
+"3,-1,136:10,-1:22,70:2,-1:2,130:17,55,130:3,70,130:10,70:21,-1,70:2,-1:2,55" +
+":21,70,55:10,70:21,-1:5,136:17,55,131,136:2,-1,136:10,-1:26,136:10,132,136:" +
+"6,55,136:3,-1,136:10,-1:26,136:7,133,136:9,55,136:3,-1,136:10,-1:26,134,136" +
+":16,55,136:3,-1,136:10,-1:26,136:8,135,136:8,55,136:3,-1,136:10,-1:26,136:6" +
+",117,136:10,55,136:3,-1,136:10,-1:26,55:8,129,55:12,-1,55:10,-1:26,136:7,15" +
+"7,136:9,55,136:3,-1,136:10,-1:26,136:5,171,136:11,55,136:3,-1,136:10,-1:26," +
+"136:4,89,136:12,55,136:3,-1,136:10,-1:26,136:13,93,136:3,55,136:3,-1,136:10" +
+",-1:26,136:8,92,136:8,55,136:3,-1,136:10,-1:26,136:11,96,136:5,55,136:3,-1," +
+"136:10,-1:26,136:10,102,136:6,55,136:3,-1,136:10,-1:26,136:6,105,136:10,55," +
+"136:3,-1,136:10,-1:26,136:4,104,136:12,55,136:3,-1,136:10,-1:26,136:7,111,1" +
+"36:9,55,136:3,-1,136:10,-1:26,136,114,136:15,55,136:3,-1,136:10,-1:26,136:4" +
+",117,136:12,55,136:3,-1,136:10,-1:26,136:9,57,136:7,55,136:3,-1,136:10,-1:2" +
+"6,136:4,159,136:12,55,136:3,-1,136:10,-1:26,136:13,145,136:3,55,136:3,-1,13" +
+"6:10,-1:26,136:6,147,136:10,55,136:3,-1,136:10,-1:26,136,116,136:15,55,136:" +
+"3,-1,136:10,-1:26,136:4,59,136,61,136:2,140,136:7,55,136:3,-1,136:10,-1:26," +
+"136:8,101,136:8,55,136:3,-1,136:10,-1:26,136:2,138,136:5,151,63,136:7,55,13" +
+"6:3,-1,136:10,-1:26,136:8,147,136:8,55,136:3,-1,136:10,-1:26,136:13,65,136:" +
+"3,55,136:3,-1,136:10,-1:26,67,136:11,69,136:4,55,136:3,-1,136:10,-1:26,136:" +
+"10,71,136:6,55,136:3,-1,136:10,-1:26,136,142,136:15,55,136:3,-1,136:10,-1:2" +
+"6,136:6,141,136:6,73,136:3,55,136:3,-1,136:10,-1:26,136:10,75,136:2,152,136" +
+":3,55,136:3,-1,136:8,153,136,-1:26,136:10,77,79,136:5,55,136:3,-1,136:10,-1" +
+":26,136:13,143,136:3,55,136:3,-1,136:10,-1:26,136:17,55,136:3,-1,136,81,136" +
+":8,-1:26,136:8,83,136:8,55,136:3,-1,136:8,139,136,-1:26,55:11,137,55:9,-1,5" +
+"5:10,-1:26,136:8,155,136:8,55,136:3,-1,136:10,-1:26,55:13,170,55:7,-1,55:10" +
+",-1:21");
 
 	public String next_token ()
 		throws java.io.IOException {
@@ -461,7 +534,7 @@ class Yylex {
 					switch (yy_last_accept_state) {
 					case 0:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -2:
 						break;
@@ -492,110 +565,110 @@ class Yylex {
 					case -7:
 						break;
 					case 6:
-						{ 
-  return "MB\t*";
+						{
+  return "OPP\t"+yytext();
 }
 					case -8:
 						break;
 					case 7:
 						{ 
-  return "DO\t."; 
+  return "MB\t*";
 }
 					case -9:
 						break;
 					case 8:
 						{ 
-  return "FA\t,"; 
+  return "DO\t."; 
 }
 					case -10:
 						break;
 					case 9:
 						{ 
-  return "LS\t[";
+  return "FA\t,"; 
 }
 					case -11:
 						break;
 					case 10:
 						{ 
-  return "RS\t]";
+  return "LS\t[";
 }
 					case -12:
 						break;
 					case 11:
 						{ 
-  return "LC\t{"; 
+  return "RS\t]";
 }
 					case -13:
 						break;
 					case 12:
 						{ 
-  return "RC\t}"; 
+  return "LC\t{"; 
 }
 					case -14:
 						break;
 					case 13:
 						{ 
-  return "LB\t("; 
+  return "RC\t}"; 
 }
 					case -15:
 						break;
 					case 14:
 						{ 
-  return "RB\t)"; 
+  return "LB\t("; 
 }
 					case -16:
 						break;
 					case 15:
 						{ 
-  return "SM\t;"; 
+  return "RB\t)"; 
 }
 					case -17:
 						break;
 					case 16:
 						{ 
-  return "AO\t="; 
+  return "SM\t;"; 
 }
 					case -18:
 						break;
 					case 17:
 						{ 
-  return "PO\t+";
+  return "AO\t="; 
 }
 					case -19:
 						break;
 					case 18:
 						{ 
-  return "LN\t!";
+  return "PO\t+";
 }
 					case -20:
 						break;
 					case 19:
 						{ 
-  return "LO\t|";
+  return "LN\t!";
 }
 					case -21:
 						break;
 					case 20:
 						{ 
-  return "LA\t&";
+  return "LO\t|";
 }
 					case -22:
 						break;
 					case 21:
 						{ 
-  return "LT\t<";
+  return "LA\t&";
 }
 					case -23:
 						break;
 					case 22:
 						{ 
-  return "GT\t>";
+  return "LT\t<";
 }
 					case -24:
 						break;
 					case 23:
 						{ 
-  return "MO\t-";
+  return "GT\t>";
 }
 					case -25:
 						break;
@@ -606,8 +679,8 @@ class Yylex {
 					case -26:
 						break;
 					case 26:
-						{
-  return "KW\t"+yytext();
+						{ 
+  return "MM\t--";
 }
 					case -27:
 						break;
@@ -660,535 +733,721 @@ class Yylex {
 						break;
 					case 35:
 						{
-  return "CH\t"+yytext();
+  return "NW\t"+yytext();
 }
 					case -36:
 						break;
 					case 36:
 						{
+  return "FR\t"+yytext();
 }
 					case -37:
 						break;
 					case 37:
 						{
+  return "CH\t"+yytext();
 }
 					case -38:
 						break;
 					case 38:
 						{
-  yybegin(YYINITIAL);
 }
 					case -39:
 						break;
 					case 39:
 						{
-  return "ID\t"+yytext();
+  return "CS\t"+yytext();
 }
 					case -40:
 						break;
 					case 40:
-						{ 
-  return "Undefined\t"+yytext(); 
+						{
+  return "WL\t"+yytext();
 }
 					case -41:
 						break;
 					case 41:
 						{
-  return "NM\t"+yytext();
+  return "CL\t"+yytext();
 }
 					case -42:
 						break;
-					case 43:
+					case 42:
 						{
-  return "ID\t"+yytext();
+  return "BR\t"+yytext();
 }
 					case -43:
 						break;
-					case 44:
-						{ 
-  return "Undefined\t"+yytext(); 
+					case 43:
+						{
+  return "SW\t"+yytext();
 }
 					case -44:
 						break;
-					case 46:
+					case 44:
 						{
-  return "ID\t"+yytext();
+  return "RE\t"+yytext();
 }
 					case -45:
 						break;
-					case 48:
+					case 45:
 						{
-  return "ID\t"+yytext();
+  return "PN\t"+yytext();
 }
 					case -46:
 						break;
-					case 50:
+					case 46:
 						{
-  return "ID\t"+yytext();
 }
 					case -47:
 						break;
-					case 52:
+					case 47:
 						{
-  return "ID\t"+yytext();
+  yybegin(YYINITIAL);
 }
 					case -48:
 						break;
-					case 54:
+					case 48:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -49:
 						break;
-					case 56:
-						{
-  return "ID\t"+yytext();
+					case 49:
+						{ 
+  return "Undefined\t"+yytext(); 
 }
 					case -50:
 						break;
-					case 57:
+					case 50:
 						{
-  return "ID\t"+yytext();
+  return "NM\t"+yytext();
 }
 					case -51:
 						break;
-					case 58:
+					case 52:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -52:
 						break;
-					case 59:
-						{
-  return "ID\t"+yytext();
+					case 53:
+						{ 
+  return "Undefined\t"+yytext(); 
 }
 					case -53:
 						break;
-					case 60:
+					case 55:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -54:
 						break;
-					case 61:
+					case 57:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -55:
 						break;
-					case 62:
+					case 59:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -56:
 						break;
-					case 63:
+					case 61:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -57:
 						break;
-					case 64:
+					case 63:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -58:
 						break;
 					case 65:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -59:
 						break;
-					case 66:
+					case 67:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -60:
 						break;
-					case 67:
+					case 69:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -61:
 						break;
-					case 68:
+					case 71:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -62:
 						break;
-					case 69:
+					case 73:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -63:
 						break;
-					case 70:
+					case 75:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -64:
 						break;
-					case 71:
+					case 77:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -65:
 						break;
-					case 72:
+					case 79:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -66:
 						break;
-					case 73:
+					case 81:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -67:
 						break;
-					case 74:
+					case 83:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -68:
 						break;
-					case 75:
+					case 85:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -69:
 						break;
-					case 76:
+					case 87:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -70:
 						break;
-					case 77:
+					case 88:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -71:
 						break;
-					case 78:
+					case 89:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -72:
 						break;
-					case 79:
+					case 90:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -73:
 						break;
-					case 80:
+					case 91:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -74:
 						break;
-					case 81:
+					case 92:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -75:
 						break;
-					case 82:
+					case 93:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -76:
 						break;
-					case 83:
+					case 94:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -77:
 						break;
-					case 84:
+					case 95:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -78:
 						break;
-					case 85:
+					case 96:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -79:
 						break;
-					case 86:
+					case 97:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -80:
 						break;
-					case 87:
+					case 98:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -81:
 						break;
-					case 88:
+					case 99:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -82:
 						break;
-					case 89:
+					case 100:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -83:
 						break;
-					case 90:
+					case 101:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -84:
 						break;
-					case 91:
+					case 102:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -85:
 						break;
-					case 92:
+					case 103:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -86:
 						break;
-					case 93:
+					case 104:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -87:
 						break;
-					case 94:
+					case 105:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -88:
 						break;
-					case 95:
+					case 106:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -89:
 						break;
-					case 96:
+					case 107:
 						{
-  return "KW\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -90:
 						break;
-					case 97:
+					case 108:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -91:
 						break;
-					case 98:
+					case 109:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -92:
 						break;
-					case 99:
+					case 110:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -93:
 						break;
-					case 100:
+					case 111:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -94:
 						break;
-					case 101:
+					case 112:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -95:
 						break;
-					case 102:
+					case 113:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -96:
 						break;
-					case 103:
+					case 114:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -97:
 						break;
-					case 104:
+					case 115:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -98:
 						break;
-					case 105:
+					case 116:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -99:
 						break;
-					case 106:
+					case 117:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -100:
 						break;
-					case 107:
+					case 118:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -101:
 						break;
-					case 108:
+					case 119:
 						{
-  return "KW\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -102:
 						break;
-					case 109:
+					case 120:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -103:
 						break;
-					case 110:
+					case 121:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -104:
 						break;
-					case 111:
+					case 122:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -105:
 						break;
-					case 112:
+					case 123:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -106:
 						break;
-					case 113:
+					case 124:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -107:
 						break;
-					case 114:
+					case 125:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -108:
 						break;
-					case 115:
+					case 126:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -109:
 						break;
-					case 116:
+					case 127:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -110:
 						break;
-					case 117:
+					case 128:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -111:
 						break;
-					case 118:
+					case 129:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -112:
 						break;
-					case 119:
+					case 130:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -113:
 						break;
-					case 120:
+					case 131:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -114:
 						break;
-					case 121:
+					case 132:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -115:
 						break;
-					case 122:
+					case 133:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -116:
 						break;
-					case 123:
+					case 134:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -117:
 						break;
-					case 124:
+					case 135:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -118:
 						break;
-					case 125:
+					case 136:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -119:
 						break;
-					case 126:
+					case 137:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -120:
 						break;
-					case 127:
+					case 138:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -121:
 						break;
-					case 128:
+					case 139:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -122:
 						break;
-					case 129:
+					case 140:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -123:
 						break;
-					case 130:
+					case 141:
 						{
-  return "ID\t"+yytext();
+  return "CND\t"+yytext();
 }
 					case -124:
+						break;
+					case 142:
+						{
+  return "CND\t"+yytext();
+}
+					case -125:
+						break;
+					case 143:
+						{
+  return "CND\t"+yytext();
+}
+					case -126:
+						break;
+					case 144:
+						{
+  return "CND\t"+yytext();
+}
+					case -127:
+						break;
+					case 145:
+						{
+  return "CND\t"+yytext();
+}
+					case -128:
+						break;
+					case 146:
+						{
+  return "CND\t"+yytext();
+}
+					case -129:
+						break;
+					case 147:
+						{
+  return "CND\t"+yytext();
+}
+					case -130:
+						break;
+					case 148:
+						{
+  return "CND\t"+yytext();
+}
+					case -131:
+						break;
+					case 149:
+						{
+  return "CND\t"+yytext();
+}
+					case -132:
+						break;
+					case 150:
+						{
+  return "CND\t"+yytext();
+}
+					case -133:
+						break;
+					case 151:
+						{
+  return "CND\t"+yytext();
+}
+					case -134:
+						break;
+					case 152:
+						{
+  return "CND\t"+yytext();
+}
+					case -135:
+						break;
+					case 153:
+						{
+  return "CND\t"+yytext();
+}
+					case -136:
+						break;
+					case 154:
+						{
+  return "CND\t"+yytext();
+}
+					case -137:
+						break;
+					case 155:
+						{
+  return "CND\t"+yytext();
+}
+					case -138:
+						break;
+					case 156:
+						{
+  return "CND\t"+yytext();
+}
+					case -139:
+						break;
+					case 157:
+						{
+  return "CND\t"+yytext();
+}
+					case -140:
+						break;
+					case 158:
+						{
+  return "CND\t"+yytext();
+}
+					case -141:
+						break;
+					case 159:
+						{
+  return "CND\t"+yytext();
+}
+					case -142:
+						break;
+					case 160:
+						{
+  return "CND\t"+yytext();
+}
+					case -143:
+						break;
+					case 161:
+						{
+  return "CND\t"+yytext();
+}
+					case -144:
+						break;
+					case 162:
+						{
+  return "CND\t"+yytext();
+}
+					case -145:
+						break;
+					case 163:
+						{
+  return "CND\t"+yytext();
+}
+					case -146:
+						break;
+					case 164:
+						{
+  return "CND\t"+yytext();
+}
+					case -147:
+						break;
+					case 165:
+						{
+  return "CND\t"+yytext();
+}
+					case -148:
+						break;
+					case 166:
+						{
+  return "CND\t"+yytext();
+}
+					case -149:
+						break;
+					case 167:
+						{
+  return "CND\t"+yytext();
+}
+					case -150:
+						break;
+					case 168:
+						{
+  return "CND\t"+yytext();
+}
+					case -151:
+						break;
+					case 169:
+						{
+  return "CND\t"+yytext();
+}
+					case -152:
+						break;
+					case 170:
+						{
+  return "CND\t"+yytext();
+}
+					case -153:
+						break;
+					case 171:
+						{
+  return "CND\t"+yytext();
+}
+					case -154:
+						break;
+					case 172:
+						{
+  return "CND\t"+yytext();
+}
+					case -155:
 						break;
 					default:
 						yy_error(YY_E_INTERNAL,false);

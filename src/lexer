@@ -46,12 +46,17 @@ RETURNTYPES = DATATYPES | void
 ACCESS=public|private|protected
 IF=if
 BRK=break
+RETURN=return
 FOR=for
+LO= == | \|\| | && | & | \|
+MO= <= | =< | >= | => | !=
+CND= {ID} | [(]{CND}({LO}|{MO}){CND}[)] | [(]{CND}[)]
 WHILE=while
 SWITCH=switch
 CLASS=class
 CASE=case
 NEW=new
+OPP= - | \* | \+ | \/
 PRNT = System.out.println | System.out.print
 ALPHA=[A-Za-z_]
 DIGIT=[0-9]
@@ -103,11 +108,17 @@ CH = '.'|'\\\\'|'\\\"'
 <YYINITIAL> {BRK} {
   return "BR\t"+yytext();
 }
+<YYINITIAL> {CND} {
+  return "CND\t"+yytext();
+}
 <YYINITIAL> {IF} {
   return "IF\t"+yytext();
 }
 <YYINITIAL> {ACCESS} {
   return "AC\t"+yytext();
+}
+<YYINITIAL> {OPP} {
+  return "OPP\t"+yytext();
 }
 <YYINITIAL> {RETURNTYPES} {
   return "RT\t"+yytext();
@@ -178,6 +189,9 @@ CH = '.'|'\\\\'|'\\\"'
 }
 <YYINITIAL> "++" { 
   return "PP\t++";
+}
+<YYINITIAL> "--" { 
+  return "MM\t--";
 }
 <YYINITIAL> "!=" { 
   return "NE\t!=";
