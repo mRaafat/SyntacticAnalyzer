@@ -11,23 +11,30 @@ import java.util.Stack;
 public class Brensawy {
 	static BufferedReader bf = null;
 	static Stack<String> curleyStack = null;
+	static int index = 0;
 	static ArrayList<String> currentBlock = null;
-	static ArrayList<String> inputFile = null;// The array list that will hold
-												// all the input file tokens
+	static ArrayList<String> inputFileTokens = null;// The array list that will
+													// hold all the input file
+													// tokens
+	static ArrayList<String> inputFileTypes = null;
+
+	//
 
 	public static void main(String[] death) throws IOException {
-		inputFile = new ArrayList<String>();
+		inputFileTokens = new ArrayList<String>();
 		curleyStack = new Stack<String>();
 		currentBlock = new ArrayList<String>();
 
-		bf = new BufferedReader(new FileReader(new File("11LCodeOut.txt")));
+		bf = new BufferedReader(new FileReader(new File("code.txt")));
 		String token;
 		while ((token = bf.readLine()) != null) {
 
-			inputFile.add(token.split("\t")[0]);
+			inputFileTokens.add(token.split("\t")[0]);
+			inputFileTypes.add(token.split("\t")[1]);
 
 		}
 
+		System.out.print(parseWhileHead(inputFileTokens));
 		// parseClass();
 	}
 
@@ -45,6 +52,64 @@ public class Brensawy {
 		if (curleyStack.empty())
 			return true;
 		return false;
+	}
+
+	public static boolean parseWhileHead(ArrayList<String> token) {
+		boolean result = false;
+		int originalIndex = index;
+
+		if (token.get(index).equals("WL")) {
+			index++;
+			if (token.get(index).equals("LB")) {
+				index++;
+				if (token.get(index).equals("BV")
+						|| token.get(index).equals("ID")) {
+					index++;
+					if (token.get(index).equals("RB")) {
+						result = true;
+					} else
+						index = originalIndex;
+				} else
+					index = originalIndex;
+			} else
+				index = originalIndex;
+		}
+
+		return result;
+
+	}
+
+	public static boolean parseStatement(ArrayList<String> token) {
+		boolean result = false;
+		int originIndex = index;
+		int typeIndex = 0;
+		if (token.get(index).equals("DT")) {
+			typeIndex = index;
+			index++;
+			if (token.get(index).equals("ID")) {
+				index++;
+				if (token.get(index).equals("AO")) {
+					index++;
+					if (token.get(index).equals("AN")) {
+						index++;
+						if (token.get(index).equals("SM")) {
+							result = true;
+							// Not handling the match of correct data types with
+							// assigned values, reaching this part of the
+							// code will make sure I have the Form Datatype
+							// Identifier = Alpha_numeric;
+						} else
+							index = originIndex;
+					} else
+						index = originIndex;
+				} else
+					index = originIndex;
+			} else
+				index = originIndex;
+		}
+
+		return result;
+
 	}
 
 	public static boolean parseClassBlock() {
